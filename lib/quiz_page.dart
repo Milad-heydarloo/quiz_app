@@ -36,14 +36,17 @@ class _quiz_pagesState extends State<quiz_pages> {
             width: double.infinity,
           ),
           Image(
-            image: AssetImage('images/1.png'),
+            // ba ! in behesh mifahmonam null nist
+            image: AssetImage('images/' +
+                getQuestionsList()[showQuestionIndex].imageNameNubmer! +
+                '.png'),
           ),
           SizedBox(
             height: 30,
           ),
           Text(
             //inja avalin soal ro miyareh chon showQuestionIndex 0 reh
-           getQuestionsList()[showQuestionIndex].questionTitle!,
+            getQuestionsList()[showQuestionIndex].questionTitle!,
             style: TextStyle(fontSize: 20),
             textAlign: TextAlign.center,
           ),
