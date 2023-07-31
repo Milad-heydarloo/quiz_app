@@ -15,41 +15,40 @@ List<Qustion> getQuestionsList() {
   ];
 
   var secondQuestion = Qustion();
-  secondQuestion.questionTitle = 'چه یبذی ایستگاهیبذفضایی میر را بنا کرد؟';
+  secondQuestion.questionTitle = 'چه کشوری ایست میر را بنا کرد؟';
   secondQuestion.imageNameNubmer = '2';
   secondQuestion.correctAnswer = 0;
-  secondQuestion.answerList = ['(شیظباوروی سابق)روسیه', 'یبذیظب', 'یب', 'یبذیبذ'];
-
+  secondQuestion.answerList = ['(شوروی سابق)روسیه', 'آمریکا', 'چین', 'هند'];
   var secondQuesti = Qustion();
-  secondQuestion.questionTitle = 'چه کشوری ایستگاه فضایی میر را یبا؟';
-  secondQuestion.imageNameNubmer = '3';
-  secondQuestion.correctAnswer = 0;
-  secondQuestion.answerList = ['(یبایب سابق)روسیه', 'یبیبذ', 'یبذیبذ', 'یب'];
+  secondQuesti.questionTitle = 'چه کشوری ایستگاه فضاییایای میر را بنا کرد؟';
+  secondQuesti.imageNameNubmer = '3';
+  secondQuesti.correctAnswer = 0;
+  secondQuesti.answerList = ['(شوروی سابق)یبایابروسیه', 'آمریکیبلیا', 'چینیای', 'هیایند'];
   var secondQuest = Qustion();
-  secondQuestion.questionTitle = 'چه یقایظ ایستگاهیب فضایی میر را بنا کرد؟';
-  secondQuestion.imageNameNubmer = '4';
-  secondQuestion.correctAnswer = 0;
-  secondQuestion.answerList = ['(قایغت سابق)روسیه', 'لدل', 'سیسیل', 'سیلی'];
+  secondQuest.questionTitle = 'چه کشویبایری اییی میر را بنا کرد؟';
+  secondQuest.imageNameNubmer = '4';
+  secondQuest.correctAnswer = 0;
+  secondQuest.answerList = ['(شوروی سابق)روسبفابیه', 'آمرفبابفیکا', 'چبابدین', 'هندیبای'];
   var secondQues = Qustion();
-  secondQuestion.questionTitle = 'چه کشوری یقذ فضایی میر را بنا کرد؟';
-  secondQuestion.imageNameNubmer = '5';
-  secondQuestion.correctAnswer = 0;
-  secondQuestion.answerList = ['(یبذ سابق)روسیه', 'بد', 'بلد', 'ائ'];
+  secondQues.questionTitle = 'چه کشورضایی میر را بنا کرد؟';
+  secondQues.imageNameNubmer = '5';
+  secondQues.correctAnswer = 0;
+  secondQues.answerList = ['(شوروی سابق)ربفابفاوسیه', 'آمریبااکا', 'چبفاین', 'هبفاند'];
   var secondQue = Qustion();
-  secondQuestion.questionTitle = 'چه کشوری ایستگاه بلد میر را بنا کرد؟';
-  secondQuestion.imageNameNubmer = '6';
-  secondQuestion.correctAnswer = 0;
-  secondQuestion.answerList = ['(شوروی سابق)بلد', 'لبدل', 'بلد', 'بلد'];
+  secondQue.questionTitle = 'چه کشوری ایستگاه فض را بنا کرد؟';
+  secondQue.imageNameNubmer = '6';
+  secondQue.correctAnswer = 0;
+  secondQue.answerList = ['(شوروی بفسابق)روسیبفاه', 'آمریبکا', 'چیبفاان', 'هبفاند'];
   var secondQu = Qustion();
-  secondQuestion.questionTitle = 'چه کشوری بلد فضایی میر را بنا کرد؟';
-  secondQuestion.imageNameNubmer = '7';
-  secondQuestion.correctAnswer = 0;
-  secondQuestion.answerList = ['روسیه', 'آمیکا', 'ین', 'هد'];
+  secondQu.questionTitle = 'چه کشوری ایی میر را بنا کرد؟';
+  secondQu.imageNameNubmer = '7';
+  secondQu.correctAnswer = 0;
+  secondQu.answerList = ['(شوروی سابق)', 'لبابط', 'رعن', 'زلغت'];
   var secondQ = Qustion();
-  secondQuestion.questionTitle = 'چهکشوری  فضایی میر را  کرد؟';
-  secondQuestion.imageNameNubmer = '8';
-  secondQuestion.correctAnswer = 0;
-  secondQuestion.answerList = ['( سابق)روسیه', 'اذب', 'ین', 'هند'];
+  secondQ.questionTitle = 'چه کوری ایسایی میر را بنا کرد؟';
+  secondQ.imageNameNubmer = '8';
+  secondQ.correctAnswer = 0;
+  secondQ.answerList = ['( سابق)روسیه', 'آمکا', 'چن', 'هد'];
 
   return [
     firstQuestion,

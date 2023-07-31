@@ -12,18 +12,22 @@ class quiz_pages extends StatefulWidget {
 
 class _quiz_pagesState extends State<quiz_pages> {
   //in soal aval ro miyareh
-  int showQuestionIndex = 0;
-Qustion? qustion;
+  int showQuestionIndex=0 ;
+  int numberValue=1 ;
+  Qustion? qustion;
+
+
   @override
   Widget build(BuildContext context) {
-    qustion=getQuestionsList()[showQuestionIndex];
+    qustion = getQuestionsList()[showQuestionIndex];
+
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.indigo[800],
         title: Text(
-          'کویز کویین',
+       ' سوال '+'${numberValue}'+' از '+'${getQuestionsList().length}',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -41,7 +45,7 @@ Qustion? qustion;
             width: 200.0,
             child: Image(
               // ba ! in behesh mifahmonam null nist
-              image: AssetImage('images/'+qustion!.imageNameNubmer!+'.png'),
+              image: AssetImage('images/' + qustion!.imageNameNubmer! + '.png'),
             ),
           ),
           SizedBox(
@@ -60,8 +64,9 @@ Qustion? qustion;
           ),
           //migeh man vasat ye list misazam ba 4 item
           //va index shomareh khonehast
+
           ...List.generate(
-            4,
+            4 ,
             //\/ListTile
             (index) => getQuestion(index),
           )
@@ -79,13 +84,20 @@ Qustion? qustion;
       //ino mizarim vase click kardan dro javabaye drost
       onTap: () {
         //tashkhis javab drost va ghalat
-        if(qustion!.correctAnswer==index){
+        if (qustion!.correctAnswer == index) {
           //true
-        }else{
+          print('shod');
+        } else {
           //false
+          print('nashod');
         }
+
         setState(() {
-          showQuestionIndex=showQuestionIndex+1;
+          print('object');
+          if (showQuestionIndex < getQuestionsList().length-1) {
+            numberValue++;
+            showQuestionIndex++;
+          }
         });
       },
     );
