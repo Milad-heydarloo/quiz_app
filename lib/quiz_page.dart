@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yu/constants/Constants.dart';
+import 'package:yu/data/Question.dart';
 
 //conver be StatefulWidget chon mikhad taqir koneh
 class quiz_pages extends StatefulWidget {
@@ -12,9 +13,11 @@ class quiz_pages extends StatefulWidget {
 class _quiz_pagesState extends State<quiz_pages> {
   //in soal aval ro miyareh
   int showQuestionIndex = 0;
-
+Qustion? qustion;
   @override
   Widget build(BuildContext context) {
+    qustion=getQuestionsList()[showQuestionIndex];
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -33,18 +36,20 @@ class _quiz_pagesState extends State<quiz_pages> {
           Container(
             width: double.infinity,
           ),
-          Image(
-            // ba ! in behesh mifahmonam null nist
-            image: AssetImage('images/' +
-                getQuestionsList()[showQuestionIndex].imageNameNubmer! +
-                '.png'),
+          Container(
+            height: 200.0,
+            width: 200.0,
+            child: Image(
+              // ba ! in behesh mifahmonam null nist
+              image: AssetImage('images/'+qustion!.imageNameNubmer!+'.png'),
+            ),
           ),
           SizedBox(
             height: 30,
           ),
           Text(
             //inja avalin soal ro miyareh chon showQuestionIndex 0 reh
-            getQuestionsList()[showQuestionIndex].questionTitle!,
+            qustion!.questionTitle!,
             style: TextStyle(fontSize: 20),
             textAlign: TextAlign.center,
           ),
@@ -68,13 +73,19 @@ class _quiz_pagesState extends State<quiz_pages> {
   Widget getQuestion(int index) {
     return ListTile(
       title: Text(
-        getQuestionsList()[showQuestionIndex].answerList![index],
+        qustion!.answerList![index],
         textAlign: TextAlign.end,
       ),
       //ino mizarim vase click kardan dro javabaye drost
       onTap: () {
+        //tashkhis javab drost va ghalat
+        if(qustion!.correctAnswer==index){
+          //true
+        }else{
+          //false
+        }
         setState(() {
-          showQuestionIndex++;
+          showQuestionIndex=showQuestionIndex+1;
         });
       },
     );
