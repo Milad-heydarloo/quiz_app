@@ -1,9 +1,19 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:yu/constants/Constants.dart';
 
-class quiz_pages extends StatelessWidget {
+//conver be StatefulWidget chon mikhad taqir koneh
+class quiz_pages extends StatefulWidget {
   const quiz_pages({Key? key}) : super(key: key);
+
+  @override
+  State<quiz_pages> createState() => _quiz_pagesState();
+}
+
+class _quiz_pagesState extends State<quiz_pages> {
+  //in soal aval ro miyareh
+  int showQuestionIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +42,8 @@ class quiz_pages extends StatelessWidget {
             height: 30,
           ),
           Text(
-            'مشهورترین بازیکن دنیا کیست ؟ ',
+            //inja avalin soal ro miyareh chon showQuestionIndex 0 reh
+           getQuestionsList()[showQuestionIndex].questionTitle!,
             style: TextStyle(fontSize: 20),
             textAlign: TextAlign.center,
           ),
