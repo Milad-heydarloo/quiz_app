@@ -37,9 +37,11 @@ class quiz_pages extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           //https://api.flutter.dev/flutter/material/ListTile-class.html
+          //mitonim bahash harchiuo mese kashi ya ajor ro ham bezarim
           SizedBox(
             height: 15,
           ),
+          //\/ListTile
           ListTile(
             title: Text(
               textAlign: TextAlign.end,
