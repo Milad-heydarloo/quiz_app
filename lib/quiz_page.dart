@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class quiz_pages extends StatelessWidget {
@@ -17,7 +19,53 @@ class quiz_pages extends StatelessWidget {
           ),
         ),
       ),
-      body: SafeArea(child: Text('data')),
+      body: SafeArea(
+          child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+          ),
+          Image(
+            image: AssetImage('images/1.png'),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Text(
+            'مشهورترین بازیکن دنیا کیست ؟ ',
+            style: TextStyle(fontSize: 20),
+            textAlign: TextAlign.center,
+          ),
+          //https://api.flutter.dev/flutter/material/ListTile-class.html
+          SizedBox(
+            height: 15,
+          ),
+          ListTile(
+            title: Text(
+              textAlign: TextAlign.end,
+              'پاسخ اول',
+            ),
+          ),
+          ListTile(
+            title: Text(
+              textAlign: TextAlign.end,
+              'پاسخ اول',
+            ),
+          ),
+          ListTile(
+            title: Text(
+              textAlign: TextAlign.end,
+              'پاسخ اول',
+            ),
+          ),
+          ListTile(
+            title: Text(
+              textAlign: TextAlign.end,
+              'پاسخ اول',
+            ),
+          ),
+        ],
+      )),
     );
   }
 }
