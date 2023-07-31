@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yu/quiz_page.dart';
 
 class HomeBodyWidget extends StatelessWidget {
   const HomeBodyWidget({Key? key}) : super(key: key);
@@ -29,7 +30,14 @@ class HomeBodyWidget extends StatelessWidget {
                 minimumSize: Size(200.0, 40.0),
                 backgroundColor: Colors.indigo[700],
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => quiz_pages(),
+                  ),
+                );
+              },
               child: Text(
                 textAlign: TextAlign.center,
                 'شروع آزمون',
