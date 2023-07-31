@@ -58,21 +58,25 @@ class _quiz_pagesState extends State<quiz_pages> {
           ...List.generate(
             4,
             //\/ListTile
-            (index) => ListTile(
-              title: Text(
-                getQuestionsList()[showQuestionIndex].answerList![index],
-                textAlign: TextAlign.end,
-              ),
-              //ino mizarim vase click kardan dro javabaye drost
-              onTap: () {
-                setState(() {
-                  showQuestionIndex++;
-                });
-              },
-            ),
+            (index) => getQuestion(index),
           )
         ],
       )),
+    );
+  }
+
+  Widget getQuestion(int index) {
+    return ListTile(
+      title: Text(
+        getQuestionsList()[showQuestionIndex].answerList![index],
+        textAlign: TextAlign.end,
+      ),
+      //ino mizarim vase click kardan dro javabaye drost
+      onTap: () {
+        setState(() {
+          showQuestionIndex++;
+        });
+      },
     );
   }
 }
