@@ -9,7 +9,7 @@ List<Qustion> getQuestionsList() {
   firstQuestion.imageNameNubmer = '1';
   firstQuestion.correctAnswer = 2;
   firstQuestion.answerList = [
-    'امیراحمدادیبی',
+    'میلاد حیدرلو',
     'دیوید کاپرفیلد',
     'هری هودینی',
     'دیوید بلین'

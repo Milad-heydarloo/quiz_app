@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:yu/constants/Constants.dart';
 
@@ -55,31 +53,24 @@ class _quiz_pagesState extends State<quiz_pages> {
           SizedBox(
             height: 15,
           ),
-          //\/ListTile
-          ListTile(
-            title: Text(
-              textAlign: TextAlign.end,
-              'پاسخ اول',
+          //migeh man vasat ye list misazam ba 4 item
+          //va index shomareh khonehast
+          ...List.generate(
+            4,
+            //\/ListTile
+            (index) => ListTile(
+              title: Text(
+                getQuestionsList()[showQuestionIndex].answerList![index],
+                textAlign: TextAlign.end,
+              ),
+              //ino mizarim vase click kardan dro javabaye drost
+              onTap: () {
+                setState(() {
+                  showQuestionIndex++;
+                });
+              },
             ),
-          ),
-          ListTile(
-            title: Text(
-              textAlign: TextAlign.end,
-              'پاسخ اول',
-            ),
-          ),
-          ListTile(
-            title: Text(
-              textAlign: TextAlign.end,
-              'پاسخ اول',
-            ),
-          ),
-          ListTile(
-            title: Text(
-              textAlign: TextAlign.end,
-              'پاسخ اول',
-            ),
-          ),
+          )
         ],
       )),
     );
