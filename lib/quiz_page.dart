@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:yu/constants/Constants.dart';
 import 'package:yu/data/Question.dart';
+import 'package:yu/screens/result_screen.dart';
 
 //conver be StatefulWidget chon mikhad taqir koneh
 class quiz_pages extends StatefulWidget {
@@ -12,22 +15,22 @@ class quiz_pages extends StatefulWidget {
 
 class _quiz_pagesState extends State<quiz_pages> {
   //in soal aval ro miyareh
-  int showQuestionIndex=0 ;
-  int numberValue=1 ;
+  int showQuestionIndex = 0;
+
+  int numberValue = 1;
+
   Qustion? qustion;
-
-
+int result=0;
   @override
   Widget build(BuildContext context) {
     qustion = getQuestionsList()[showQuestionIndex];
-
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.indigo[800],
         title: Text(
-       ' سوال '+'${numberValue}'+' از '+'${getQuestionsList().length}',
+          ' سوال ' + '${numberValue}' + ' از ' + '${getQuestionsList().length}',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -36,13 +39,15 @@ class _quiz_pagesState extends State<quiz_pages> {
       ),
       body: SafeArea(
           child: Column(
+
+
         children: [
           Container(
             width: double.infinity,
           ),
           Container(
-            height: 200.0,
-            width: 200.0,
+            height: 250.0,
+            width: 250.0,
             child: Image(
               // ba ! in behesh mifahmonam null nist
               image: AssetImage('images/' + qustion!.imageNameNubmer! + '.png'),
@@ -66,10 +71,37 @@ class _quiz_pagesState extends State<quiz_pages> {
           //va index shomareh khonehast
 
           ...List.generate(
-            4 ,
+            4,
             //\/ListTile
             (index) => getQuestion(index),
-          )
+          ),
+          //migam age tedad soal pasokh dadeh shode ba tedad kole soalat yeki bod
+          if (showQuestionIndex == getQuestionsList().length - 1)
+            Padding(
+              padding: EdgeInsets.all(40),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(200.0, 50.0),
+                  backgroundColor: Colors.red[700],
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => azmon(result: result,),
+                    ),
+                  );
+                },
+                child: Text(
+                  'نتیجه آزمون',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
         ],
       )),
     );
@@ -87,6 +119,7 @@ class _quiz_pagesState extends State<quiz_pages> {
         if (qustion!.correctAnswer == index) {
           //true
           print('shod');
+          result++;
         } else {
           //false
           print('nashod');
@@ -94,7 +127,7 @@ class _quiz_pagesState extends State<quiz_pages> {
 
         setState(() {
           print('object');
-          if (showQuestionIndex < getQuestionsList().length-1) {
+          if (showQuestionIndex < getQuestionsList().length - 1) {
             numberValue++;
             showQuestionIndex++;
           }
